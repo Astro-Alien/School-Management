@@ -52,6 +52,22 @@ The technology department has decided to use Domain Driven Design to actualize t
 the technology team was given the responsibility to solicit requirements based on the as-is processes. 
 Thus, after many analysis meetings, they have come up with a domain model.
 
+## Diagram Accuracy
+The relationship between Country and City is one in which country information is mandatory for a city to be 
+created. Since the country information composes the city information, the direction of the shaded
+composition diamond must be facing the entity that is being composed. As it stands, the diamond faces the
+Country class, yet the city contains the Country class as an object - this contradicts each other.
+
+## Request for Student Surnames
+The request to create only a list of student surnames using an identifier of a country may
+work as an ad hoc query. However, when it is made in the form of a request to create an API 
+it is incomplete. This is because a list of student surnames with no associated unique identifiers
+is not helpful. Many students may have similar surnames with no way to differentiate them. 
+An API created for this purpose is underutilized and when a proper query is created that needs a list of
+student surnames with identifiers, a new API may need to be created for this purpose - which would be 
+a waste as both these APIs would share plenty similar operations.
+
+
 ## UML Diagram
 ![2022-06-17 (2)](https://user-images.githubusercontent.com/69191757/174347276-28d19e09-6887-4f33-9272-6d7a58f1bd35.png)
 ![2022-06-17 (4)](https://user-images.githubusercontent.com/69191757/174347300-363285db-5fd6-498c-83b1-93e54f3b191f.png)
